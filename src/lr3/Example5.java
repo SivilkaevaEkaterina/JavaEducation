@@ -21,6 +21,11 @@ public class Example5 {
             total += numbers[i];
         }
         System.out.println(total);
+        if (total % 5 == 2 || total % 3 == 1) {
+            System.out.println("Сумма чисел удовлетворяет критериям");
+        } else {
+            System.out.println("Сумма числе не удовлетворяет критериям");
+        }
     }
 }
 
