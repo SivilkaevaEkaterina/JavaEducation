@@ -15,12 +15,13 @@ public class Example5 {
         System.out.println("Введите числа ");
         for (int i = 0; i < size; i++) {
             numbers[i] = in.nextInt();
+            System.out.println("Ваше число: " + numbers[i]);
         }
         int total = 0;
         for (int i = 0; i < size; i++) {
             total += numbers[i];
         }
-        System.out.println(total);
+        System.out.println("Сумма чисел = " + total);
         if (total % 5 == 2 || total % 3 == 1) {
             System.out.println("Сумма чисел удовлетворяет критериям");
         } else {
