@@ -1,5 +1,7 @@
 package lr3;
 
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,32 +11,20 @@ public class Example9 {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите размер массива ");
         int size = in.nextInt();
-        String more = "";
-        String more1 = "";
-        int result1 = 0;
 
-        int[] array = new int[size];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(2);
-            System.out.println("[" + i + "]" + (array[i]));
-            result1 = array[i];
-        }
-        int min = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (array[min] > array[i])
-            {min = i;}
-        }
-        for (int i = min; i < array.length; i++) {
-            if (array[min] == array[i])
-            {more += "[" + i + "]";}
-        }
-        for (int i = min; i < array.length; i++) {
-            if (array[min] == array[i])
-            {more1 += " " + array[i];}
-        }
 
-        System.out.println("Индекс минимального значения: " + more);
-        System.out.println("Минимальное значение: " + more1);
+        int[] numbers = new int[size];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = random.nextInt(2);
+            System.out.println("[" + i + "]" + (numbers[i]));
+
+        }
+        IntSummaryStatistics stat = Arrays.stream(numbers).summaryStatistics();
+        int min = stat.getMin();
+
+        for (var i = 0; i < numbers.length; i++)
+            if (min == numbers[i])
+                System.out.println(min + " [" + i + "]");
     }
 }
 
