@@ -1,25 +1,18 @@
 package lr5;
-
 public class Example4 {
     public static void main(String[] args) {
-        Example4 example4 = new Example4();
+        double num = 65.1267;
+        Different different = new Different(num);
     }
 }
-
 class Different{
+        public char a1;
+        public int b1;
+    public Different (double number) {
+            char a1 = (char) number;
+            int b1 = (int) ((number-(int)number)*100);
+            System.out.println("Символьное поле " + a1);
+            System.out.println("Целочисленное поле " + b1);
+        }
 
-    private char a1;
-    private int a2;
-    private double a3;
-
-    public Different(char a1, int a2){
-        this.a1 = a1;
-        this.a2 = a2;
     }
-
-    public Different(double a3){
-    }
-
-
-
-}
