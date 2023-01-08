@@ -2,7 +2,7 @@ package lr5;
 
 public class Example3 {
     public static void main(String[] args) {
-        Test test = new Test();
+        Test test = new Test(1,2);
     }
 }
 class Test {
